@@ -1,0 +1,206 @@
+html {
+  height: 100vh;
+  min-width: 600px;
+  background-image: linear-gradient(180deg, #ffd1d0, #ff8a8a);
+  background-repeat: no-repeat;
+  background-size: auto;
+}
+
+body {
+  margin-top: 12px;
+}
+
+.container {
+  width: 510px;
+  font-family: "Times New Roman" Times serif;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: auto;
+  box-shadow: rgba(0, 0, 0, 0.35) 1px 1px 10px;
+}
+
+.todoTitle {
+  font-size: 3.1rem;
+  margin: 18px 0 0 0;
+  opacity: 0;
+  animation-name: showItem;
+  animation-duration: 1s;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
+  /* name, duration, timing-function(ease), delay, iteration-count, direction */
+}
+
+.inputLine,
+.countTodo,
+.addButton,
+.infoText,
+.todoList li,
+h1 {
+  text-align: center;
+}
+
+.countTodo {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  margin-bottom: 30px;
+  opacity: 0;
+  animation-name: showItem;
+  animation-duration: 1s;
+  animation-delay: 1.2s;
+  animation-fill-mode: forwards;
+}
+
+input[type="text"],
+select {
+  display: inline-block;
+  width: 230px;
+  font-size: 1.35rem;
+  padding: 4px 3px 5px 4px;
+  border-radius: 3px;
+  border: 1px solid #666666;
+}
+
+.addButton,
+input {
+  font-family: Arial, Helvetica, sans-serif;
+  opacity: 0;
+  animation-name: showItem;
+  animation-duration: 1s;
+  animation-delay: 1.4s;
+  animation-fill-mode: forwards;
+}
+
+.addButton {
+  display: inline-block;
+  padding: 4px 12px 5px 11px;
+  margin-left: 3px;
+  font-size: 1.35rem;
+  font-weight: 550;
+  border-radius: 3px;
+  border: 1px solid #666666;
+  cursor: pointer;
+}
+
+.addButton:hover {
+  background-color: #e4e4e4;
+}
+
+.infoText {
+  opacity: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  font-style: oblique;
+  color: #e40000;
+  margin-top: 7px;
+  font-weight: 560;
+}
+
+.alert {
+  opacity: 1;
+  animation-name: redAlert;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+.todoContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.todoList {
+  margin: 0;
+  padding: 20px 25px;
+  height: 100%;
+  width: 300px;
+}
+
+.todoList {
+  list-style-type: none;
+}
+
+.todoList li {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 26px;
+  margin-bottom: 16px;
+  animation-name: flowUp;
+  animation-duration: 0.5s;
+}
+
+.todoList li span:first-child:hover {
+  text-decoration: line-through;
+}
+
+.trashcan {
+  font-size: 16px;
+  opacity: 0.5;
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+.trashcan:hover {
+  opacity: 1;
+}
+
+.completed {
+  color: #898989;
+  text-decoration: line-through;
+}
+
+.bounceIn {
+  animation: bounce 1s ease;
+}
+
+/* ======= ANIMATIONER ======= */
+
+@keyframes bounce {
+  0% {
+    transform: translateY(-300px);
+    opacity: 0;
+  }
+  40% {
+    transform: translateY(80px);
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Blinking animation */
+@keyframes redAlert {
+  0%,
+  50%,
+  100% {
+    opacity: 1;
+  }
+  25%,
+  75% {
+    opacity: 0;
+  }
+}
+
+/* Animation for new todo-elements */
+@keyframes flowUp {
+  0% {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Animation for showing parts of the todo-section. delay in CSS class or Id */
+@keyframes showItem {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
